@@ -11,6 +11,6 @@ sudo chown -R "$(whoami)" "$(find $(pwd)/jenkins_home -maxdepth 0 -type d)"
 # Relative path was not used in Mount; therefore find command was used to find
 # the full path of the jenkins_home folder
 docker run --name jenkins-docker \
- -u root -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock \
+ -u root -p 8080:8081 -v /var/run/docker.sock:/var/run/docker.sock \
  -v "$(find $(pwd)/jenkins_home -maxdepth 0 -type d)":/var/jenkins_home \
  tyitzhak/jenkins-docker:latest
